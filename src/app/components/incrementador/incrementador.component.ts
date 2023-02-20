@@ -17,9 +17,6 @@ export class IncrementadorComponent implements OnInit {
 
   @Output() valorSalida: EventEmitter<number> = new EventEmitter();
 
-  // get getPorcentaje() {
-  //   return `${this.progreso}%`;
-  // }
 
   cambiarValor(valor: number) {
     if (this.progreso < 0) { this.progreso = 0; }
