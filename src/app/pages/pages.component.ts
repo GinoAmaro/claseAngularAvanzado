@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '../services/settings.service';
+
+declare function iniciarCustom(): void;
 
 @Component({
   selector: 'app-pages',
@@ -8,15 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
 
-  public linkTheme = document.querySelector('#theme');
 
-  constructor() { }
+  constructor(private settingService: SettingsService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
 
-    const prueba = localStorage.getItem('theme') || './assets/css/colors/purple-dark.css';
-
-    this.linkTheme?.setAttribute('href', prueba);
+    iniciarCustom();
 
   }
 
